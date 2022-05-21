@@ -1,0 +1,22 @@
+{
+  "name": "getcoords",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gunnermadsen/getcoords.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gunnermadsen/getcoords/issues"
+  },
+  "homepage": "https://github.com/gunnermadsen/getcoords#readme",
+  "devDependencies": {
+    "typescript": "^4.6.4"
+  }
+}

@@ -1,0 +1,121 @@
+    <form novalidate method="post" action="index.php" id="order-form" class="needs-validation">
+        <div class="row">
+            <!-- Map Form -->
+            <div class="col-md-4 col-sm-5 col-xs-4">
+                <!-- Origin -->
+                <div class="form-group row">
+                    <div class="col-sm-12">
+                        <input required name="origin" id="origin-input" class="form-control input-md" type="text" placeholder="Enter an origin location" maxlength="30" pattern="^[a-zA-Z0-9,. ]*$">
+                        <span class="help-block"> </span>  
+                    </div>
+                </div>
+                <!-- add & delete waypoint buttons -->
+                <div class="row justify-content-start">
+                    <div class="col-1">
+                        <button type="button" id="add-waypoint" class="btn btn-sm btn-info" data-toggle="tooltip" data-placement="top" title="Add an optional stop to the route" style="margin-bottom:15px;"><i class="fa fa-plus" aria-hidden="true"></i></button>
+                    </div>
+                    <div class="col" id="delete-waypoint" >
+                        <button type="button" id="delete-waypoint" class="btn btn-sm btn-danger" data-toggle="tooltip" data-placement="top" title="Add an optional stop to the route" style="margin-bottom:15px;display:none;"><i class="fa fa-close" aria-hidden="true"></i></button>
+                    </div>
+                </div>
+                <!-- Pickup -->
+                <div id="waypoint-group" style="display:none">
+                    <!-- dynamically created waypoint input elements will be appended here -->
+                </div>
+                <!-- Destination -->
+                <div class="form-group row">
+                    <div class="col-sm-12">
+                        <input required name="destination" id="destination-input" class="form-control input-md" type="text" placeholder="Enter a destination location" maxlength="30" pattern="^[a-zA-Z0-9,. ]*$">
+                        <span class="help-block"> </span>  
+                    </div>
+                </div>
+                <div id="route-data-table" style="display:none">
+                    <hr class="my-2">
+                    <div id="route-results" class="data">
+            		  	<table id="route-table" class="resultsTable">
+            		    	<tbody id="route-data"></tbody>
+            		  	</table>
+                    </div>
+                    <hr class="my-2">
+                </div>
+            </div> <!-- col-md-4 -->
+            <!-- Google Map -->
+            <div class="col-md-8 col-sm-7 col-xs-8">
+                <div id="map"></div>
+            </div>
+        </div>
+        <!-- Origin And Destination Airport Content -->
+        <div id="hidden-tabs" style="display: none"> 
+            <hr class="my-2">
+            <div class="row">
+                <div class="col-lg-4 col-md-4 col-sm-5 col-xs-12 tab-spacing">
+                    <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                        <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#origin-airports" role="tab" aria-controls="origin-airports" aria-selected="true">Origin Airport Results</a>
+                        <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#destination-airports" role="tab" aria-controls="destination-airports" aria-selected="false">Destination Airport Results</a>
+                    </div>
+                </div>
+                <div class="col-lg-8 col-md-8 col-sm-7 col-xs-12">
+                    <div class="tab-content" id="v-pills-tabContent">
+                        <div class="tab-pane fade show active result-tabs" id="origin-airports" role="tabpanel" aria-labelledby="origin-airports-tab">
+                            <form id="origin-airports" action="">
+                                <div class="listing">
+                                    <table class="resultsTable">
+                                        <tbody id="origin-results"></tbody>
+                                    </table>
+                                </div>
+                            </form>
+                        </div>
+
+                        <div class="tab-pane fade result-tabs" id="destination-airports" role="tabpanel" aria-labelledby="destination-airports-tab">
+                            <form id="destination-airports" action="">
+                                <div class="listing">
+                                    <table class="resultsTable">
+                                        <tbody id="destination-results"></tbody>
+                                    </table>
+                                </div>
+                            </form>
+                        </div>
+                    </div> <!-- tab-content -->
+                </div> <!-- col-md-8 -->
+            </div> <!-- row -->
+        </div> <!-- hidden-tabs -->
+        <hr class="my-2">
+        <!-- Get Quote Button -->
+        <div class="row">
+            <div class="col-sm-2" >
+                <button type="button" id="create-route" class="btn btn-sm btn-success" data-toggle="tooltip" data-placement="top" title="Add an optional stop to the route" disabled>Get Rate</button>
+            </div>        		    
+        </div>
+        <!-- Info Content for Map Markers -->
+        <div style="display: none">
+            <div id="info-content"> 
+                <table>
+                    <tr id="iw-url-row" class="iw_table_row">
+                        <td id="iw-icon" class="iw_table_icon"></td>
+                        <td id="iw-url"></td>
+                    </tr>
+                    <tr id="iw-address-row" class="iw_table_row">
+                        <td class="iw_attribute_name">Address:</td>
+                        <td id="iw-address"></td>
+                    </tr>
+                    <tr id="iw-phone-row" class="iw_table_row">
+                        <td class="iw_attribute_name">Telephone:</td>
+                        <td id="iw-phone"></td>
+                    </tr>
+                    <tr id="iw-rating-row" class="iw_table_row">
+                        <td class="iw_attribute_name">Rating:</td>
+                        <td id="iw-rating"></td>
+                    </tr>
+                    <tr id="iw-website-row" class="iw_table_row">
+                        <td class="iw_attribute_name">Website:</td>
+                        <td id="iw-website"></td>
+                    </tr>
+                </table>
+            </div> <!-- info-content -->
+        </div>
+        <!-- for testing purposes -->
+        <!-- <div id="right-panel"></div> -->
+    </form>
+ 
+
+
